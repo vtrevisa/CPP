@@ -1,12 +1,25 @@
-NAME = megaphone
+#----SPECIFICS---------------------------------------------------------------------------------
+
+NAME = zombies
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+
+#----DIRS--------------------------------------------------------------------------------------
 
 OBJ_DIR = obj
+SRC_DIR = src
+INC_DIR = includes
+VPATH = ./src ./src/classes
 
-SRC = megaphone.cpp
+#----FLAGS-------------------------------------------------------------------------------------
+
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -I $(INC_DIR)
+
+#----OBECTS------------------------------------------------------------------------------------
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+#----FUNCTIONS----------------------------------------------------------------------------------
 
 all: $(NAME)
 

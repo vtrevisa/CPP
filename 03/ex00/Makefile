@@ -1,10 +1,9 @@
 #----SPECIFICS---------------------------------------------------------------------------------
 
-NAME = zombieHorde
-SRC = main.cpp zombieHorde.cpp Zombie.cpp
+NAME = claptrap
+SRC = main.cpp ClapTrap.cpp
 
 #----DIRS--------------------------------------------------------------------------------------
-
 OBJ_DIR = obj
 SRC_DIR = src
 INC_DIR = includes

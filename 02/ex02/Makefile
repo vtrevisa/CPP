@@ -1,10 +1,9 @@
 #----SPECIFICS---------------------------------------------------------------------------------
 
-NAME = brain
-SRC = main.cpp
+NAME = occf
+SRC = main.cpp Fixed.cpp
 
 #----DIRS--------------------------------------------------------------------------------------
-
 OBJ_DIR = obj
 SRC_DIR = src
 INC_DIR = includes

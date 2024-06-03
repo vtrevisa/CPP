@@ -5,29 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrevisa <vtrevisa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 11:37:05 by vtrevisa          #+#    #+#             */
-/*   Updated: 2024/05/21 15:18:44 by vtrevisa         ###   ########.fr       */
+/*   Created: 2024/05/27 14:31:10 by vtrevisa          #+#    #+#             */
+/*   Updated: 2024/06/03 13:35:26 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Zombie.hpp"
+#include "../includes/Fixed.hpp"
 
-int	main(void)
+int main( void )
 {
-	int	z = 10;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
 
-	std::cout << BLUE << "---------------------------------------------" << std::endl;
-	std::cout << "*********" << GREEN << "TESTING MEMORY ALOCCATION" << BLUE << "*********" << std::endl;
-	std::cout << "---------------------------------------------\n" << std::endl;
-	std::cout << "Creating Horde with " << z << " zombies..." << std::endl;
-	Zombie *horde = zombieHorde(z, "Arlly");
+	a = Fixed( 1234.4321f );
 
-	std::cout << "\nCalling announce function" << std::endl;
-	for (int i = 0; i < z; i++)
-		horde[i].announce();
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 
-	std::cout << "\nDeleting Horde" << std::endl;
-	delete[] horde;
-
-	return (0);
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	return 0;
 }

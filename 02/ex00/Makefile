@@ -1,10 +1,9 @@
 #----SPECIFICS---------------------------------------------------------------------------------
 
-NAME = zombies
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+NAME = occf
+SRC = main.cpp Fixed.cpp
 
 #----DIRS--------------------------------------------------------------------------------------
-
 OBJ_DIR = obj
 SRC_DIR = src
 INC_DIR = includes
@@ -22,6 +21,9 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 #----FUNCTIONS----------------------------------------------------------------------------------
 
 all: $(NAME)
+
+v: all
+	valgrind --leak-check=full ./$(NAME)
 
 $(NAME): $(OBJ)
 	@c++ $(CFLAGS) $(OBJ) -o $@

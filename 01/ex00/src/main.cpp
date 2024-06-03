@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrevisa <vtrevisa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 11:21:20 by vtrevisa          #+#    #+#             */
-/*   Updated: 2024/05/21 14:10:02 by vtrevisa         ###   ########.fr       */
+/*   Created: 2024/05/21 11:37:05 by vtrevisa          #+#    #+#             */
+/*   Updated: 2024/06/03 11:51:58 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "../includes/Zombie.hpp"
 
-#include <iostream>
-#include <string>
-
-class Zombie
+int	main(void)
 {
-	private:
+	Zombie allyne("Arlly");
+	Zombie *tomas = newZombie("Tom");
 
-	std::string name;
+	allyne.announce();
+	tomas->announce();
+	randomChump("Raz");
 
-	public:
-
-	void	announce(void);
-
-	Zombie(std::string name);
-	~Zombie();
-};
-
-#endif
+	delete (tomas);
+	return (0);
+}

@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrevisa <vtrevisa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 11:24:50 by vtrevisa          #+#    #+#             */
-/*   Updated: 2024/05/21 13:52:57 by vtrevisa         ###   ########.fr       */
+/*   Created: 2024/06/02 13:03:37 by vtrevisa          #+#    #+#             */
+/*   Updated: 2024/06/02 13:13:06 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie(std::string name){this->name = name;}
-Zombie::~Zombie(){std::cout << this->name << " has died :<" << std::endl;}
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-void	Zombie::announce(void)
+#include "ClapTrap.hpp"
+
+
+class FragTrap : public ClapTrap
 {
-	std::cout << this->name << ": BraiiiiinnnzzzzZ..." << std::endl;
-}
+	public:
+
+	void	highFivesGuys();
+
+	FragTrap();
+	FragTrap(std::string name);
+	FragTrap(const FragTrap& copy);
+	FragTrap& operator = (const FragTrap& copy);
+	~FragTrap();
+};
+
+#endif

@@ -5,32 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrevisa <vtrevisa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 08:59:31 by vtrevisa          #+#    #+#             */
-/*   Updated: 2024/05/21 11:06:55 by vtrevisa         ###   ########.fr       */
+/*   Created: 2024/05/21 11:37:05 by vtrevisa          #+#    #+#             */
+/*   Updated: 2024/05/21 15:18:44 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/PhoneBook.hpp"
+#include "../includes/Zombie.hpp"
 
 int	main(void)
 {
-	PhoneBook		book;
-	std::string		command;
+	int	z = 10;
 
-	std::cout << "This is your phonebook!" << std::endl;
-	while (book.utils.running)
-	{
-		book.utils.showMenu();
-		if (book.utils.getCommand("Input your command: ", command, NULL) == false)
-			return (false);
-		if (command == "ADD" || command == "add")
-			book.add_contact();
-		else if (command == "SEARCH" || command == "search")
-			book.search_contact();
-		else if (command == "EXIT" || command == "exit")
-			return (0);
-		else
-			std::cout << "Invalid command, please use ADD, SEARCH or EXIT" << std::endl;
-	}
+	std::cout << BLUE << "---------------------------------------------" << std::endl;
+	std::cout << "*********" << GREEN << "TESTING MEMORY ALOCCATION" << BLUE << "*********" << std::endl;
+	std::cout << "---------------------------------------------\n" << std::endl;
+	std::cout << "Creating Horde with " << z << " zombies..." << std::endl;
+	Zombie *horde = zombieHorde(z, "Arlly");
+
+	std::cout << "\nCalling announce function" << std::endl;
+	for (int i = 0; i < z; i++)
+		horde[i].announce();
+
+	std::cout << "\nDeleting Horde" << std::endl;
+	delete[] horde;
+
 	return (0);
 }

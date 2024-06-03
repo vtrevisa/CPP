@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtrevisa <vtrevisa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 14:31:10 by vtrevisa          #+#    #+#             */
-/*   Updated: 2024/05/27 17:14:21 by vtrevisa         ###   ########.fr       */
+/*   Created: 2024/06/01 18:45:51 by vtrevisa          #+#    #+#             */
+/*   Updated: 2024/06/02 12:49:36 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Fixed.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main( void ) 
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
-}
+	public:
+	
+	void	attack(const std::string& target);
+	void	guardGate();
+	
+	ScavTrap();
+	ScavTrap(std::string name);
+	~ScavTrap();
+	ScavTrap(const ScavTrap& copy);
+	ScavTrap& operator = (const ScavTrap& copy);
+};
+
+void	showStatus(ScavTrap &strp, int status);
+#endif
